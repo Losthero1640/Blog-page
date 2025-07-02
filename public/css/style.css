@@ -62,7 +62,6 @@ img {
   height: auto;
 }
 
-/* Layout */
 .container {
   max-width: 982px;
   margin: 0 auto;
@@ -73,7 +72,6 @@ img {
   padding: 20px 0;
 }
 
-/* Hero Section */
 .hero-image {
   max-height: 528px;
   filter: drop-shadow(0px 44px 34px rgba(0, 0, 0, 0.25));
@@ -81,8 +79,6 @@ img {
   border-radius: var(--border-radius);
 }
 
-
-/* Main Header */
 .header {
   display: grid;
   align-items: center;
@@ -152,7 +148,6 @@ img {
   border: 2px solid var(--black);
 }
 
-/* Header -> Navigation */
 .header__nav ul {
   list-style-type: none;
   display: flex;
@@ -174,7 +169,6 @@ img {
   text-decoration: underline;
 }
 
-/* Author - HomePage */
 .author {
   padding: 10px 0;
   text-align: center;
@@ -190,8 +184,6 @@ img {
   margin: 5px 0 40px 0;
 }
 
-
-/* Home Article List */
 .articles__heading {
   margin-top: 4rem;
   font-weight: 400;
@@ -259,16 +251,10 @@ img {
 .article {
   white-space: pre-wrap;
 }
-
-
-/* Footer */
 .footer {
   margin: 4rem;
   text-align: center;
 }
-
-
-/* Dashboard Admin */
 .admin-title {
   display: flex;
   justify-content: space-between;
@@ -300,8 +286,6 @@ img {
   justify-content: space-between;
   padding: 10px 0;
 }
-
-/* SeachBar */
 .searchBar {
   visibility: hidden;
   transform: translateY(-100px);

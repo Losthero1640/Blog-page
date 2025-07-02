@@ -2,10 +2,9 @@ const express = require('express');
 const router = express.Router();
 const Post= require('../models/Post.js');
 
-/**
- * GET /
- * Home
-*/
+
+//GET/Home
+
 router.get('', async (req, res) => {
 
       
@@ -44,10 +43,9 @@ router.get('', async (req, res) => {
 
 
 
-    /**
-     *  get /
-     * post :id
-     */
+    
+    //get/post :id
+    
 
     router.get('/post/:id', async (req, res) => {
       try {
@@ -71,10 +69,9 @@ router.get('', async (req, res) => {
     
     });
 
-      /**
- * POST /
- * Post - searchTerm
-*/
+
+//POST /Post - searchTerm
+
 router.post('/search', async (req, res) => {
   try {
     const locals = {
@@ -157,96 +154,5 @@ router.get('admin/dashboard',(req,res)=>{
             
 ;
 });
-
-// router.get('', async (req, res) => {
-//   const locals = {
-//     title: "NodeJs Blog",
-//     description: "Simple Blog created with NodeJs, Express & MongoDb."
-//   }
-
-//   try {
-//     const data = await Post.find();
-//     res.render('index', { locals, data });
-//   } catch (error) {
-//     console.log(error);
-//   }
-
-// });
-
-
-
-    //copy of the main rout 
-
-    // router.get('', async (req, res) => {
-
-    //   const locals = {
-    //     title: "NodeJs Blog",
-    //     description: "Simple Blog created with NodeJs, Express & MongoDb."
-    //   }
-    //   try{
-    //     const data= await Post.find();
-    //     res.render('index', {locals,data});
-    //   } catch(error){
-    //     console.log(error);
-    //   }
-    // });
-// function insertPostData(){
-// Post.insertMany([
-//   {
-//     title:"Building a blog",
-//     body:"This is the body  text"
-//   },
-//   {
-//     "title": "Asynchronous Programming with Node.js",
-//     "body": "Asynchronous Programming with Node.js: Explore the asynchronous nature of Node.js and how it allows for non-blocking operations."
-//   },
-//   {
-//     "title": "Learn the basics of Node.js and its architecture",
-//     "body": "Learn the basics of Node.js and its architecture, how it works, and why it is popular among developers."
-//   },
-//   {
-//     "title": "NodeJs Limiting Network Traffic",
-//     "body": "Learn how to limit network traffic."
-//   },
-//   {
-//     "title": "Learn Morgan - HTTP Request logger for NodeJs",
-//     "body": "Learn Morgan."
-//   },
-//   {
-//     "title": "Understanding Event Loop in Node.js",
-//     "body": "Dive into the Node.js Event Loop, its phases, and how it handles asynchronous tasks efficiently."
-//   },
-//   {
-//     "title": "Building RESTful APIs with Express.js",
-//     "body": "Learn how to create robust and scalable RESTful APIs using Express.js, a popular Node.js framework."
-//   },
-//   {
-//     "title": "Working with Streams in Node.js",
-//     "body": "Explore Node.js streams and how they handle large data efficiently through a continuous data flow."
-//   },
-//   {
-//     "title": "Debugging Node.js Applications",
-//     "body": "Master debugging Node.js applications using tools like the built-in debugger and third-party tools."
-//   },
-//   {
-//     "title": "Implementing Authentication in Node.js",
-//     "body": "Understand how to implement secure authentication using Passport.js and JSON Web Tokens (JWT) in Node.js applications."
-//   }
-// ])
-// .then(() => {
-//   console.log("Data inserted");
-// }).catch((err) => {
-//   console.log(err);
-// });
-// }
-
-
-// insertPostData();
-
-
-
-
-
-
 
 module.exports = router;

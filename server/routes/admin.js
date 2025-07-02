@@ -11,10 +11,9 @@ const jwtSecret = process.env.JWT_SECRET;
 
 
 
-/**
- * 
- * Check Login
-*/
+
+  
+//  Check Login
 const authMiddleware = (req, res, next ) => {
   const token = req.cookies.token;
 
@@ -31,12 +30,8 @@ const authMiddleware = (req, res, next ) => {
   }
 }
 
-
-/**
- * GET /
- * Admin-login page
-*/
-
+//  GET /
+//  Admin-login page
 router.get('/admin', async (req, res) => {
     try {
       const locals = {
@@ -54,10 +49,9 @@ router.get('/admin', async (req, res) => {
 
 
 
-  /**
- * POST /
- * Admin - Check Login
-*/
+  
+//  POST /
+//  Admin - Check Login
 router.post('/admin', async (req, res) => {
     try {
       const { username, password } = req.body;
@@ -83,10 +77,10 @@ router.post('/admin', async (req, res) => {
     }
   });
 
-  /**
- * GET /
- * Admin Dashboard
-*/
+
+  // GET /
+  // Admin Dashboard
+
 router.get('/dashboard', authMiddleware, async (req, res) => {
   try {
     const locals = {
@@ -109,10 +103,10 @@ router.get('/dashboard', authMiddleware, async (req, res) => {
 });
 
 
-/**
- * GET /
- * Admin - Create New Post
-*/
+
+  // GET /
+  // Admin - Create New Post
+
 router.get('/add-post', authMiddleware, async (req, res) => {
   try {
     const locals = {
@@ -133,10 +127,9 @@ router.get('/add-post', authMiddleware, async (req, res) => {
 });
 
 
-/**
- * POST /
- * Admin - Create New Post
-*/
+
+//  POST /
+//  Admin - Create New Post
 router.post('/add-post', authMiddleware, async (req, res) => {
   try {
     try {
@@ -156,11 +149,8 @@ router.post('/add-post', authMiddleware, async (req, res) => {
   }
 });
 
-
-/**
- * GET /
- * Admin - Create New Post
-*/
+// GET /
+// Admin - Create New Post
 router.get('/edit-post/:id', authMiddleware, async (req, res) => {
   try {
 
@@ -183,11 +173,9 @@ router.get('/edit-post/:id', authMiddleware, async (req, res) => {
 
 });
 
+// PUT /
+// Admin - Create New Post
 
-/**
- * PUT /
- * Admin - Create New Post
-*/
 router.put('/edit-post/:id', authMiddleware, async (req, res) => {
   try {
 
@@ -221,11 +209,9 @@ router.put('/edit-post/:id', authMiddleware, async (req, res) => {
 //   }
 // });
 
+//  POST /
+//  Admin - Register
 
-/**
- * POST /
- * Admin - Register
-*/
 router.post('/register', async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -246,10 +232,8 @@ router.post('/register', async (req, res) => {
   }
 });
 
-/**
- * DELETE /
- * Admin - Delete Post
-*/
+// DELETE /
+// Admin - Delete Post
 router.delete('/delete-post/:id', authMiddleware, async (req, res) => {
 
   try {
@@ -261,10 +245,9 @@ router.delete('/delete-post/:id', authMiddleware, async (req, res) => {
 
 });
 
-/**
- * GET /
- * Admin Logout
-*/
+//  GET /
+//  Admin Logout
+
 router.get('/logout', (req, res) => {
   res.clearCookie('token');
   //res.json({ message: 'Logout successful.'});

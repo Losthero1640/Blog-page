@@ -22,7 +22,3 @@ document.addEventListener('DOMContentLoaded', function(){
   
   
   });
-
-//   DOMContentLoaded:
-// Yeh ensure karta hai ki code tabhi chale jab pura HTML page load ho chuka ho.
-// Matlab, tabhi chalega jab page ke elements ready ho jaayein.
